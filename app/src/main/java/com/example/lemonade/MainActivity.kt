@@ -92,13 +92,13 @@ class MainActivity : AppCompatActivity() {
     private fun clickLemonImage() {
 
         when (lemonadeState) {
-            "select" -> {
+            SELECT -> {
                 lemonadeState = SQUEEZE
                 lemonSize = LemonTree().pick()
                 squeezeCount = 0
             }
 
-            "squeeze" -> {
+            SQUEEZE -> {
                 squeezeCount++
                 lemonSize--
                 if (lemonSize == 0) {
@@ -107,11 +107,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            "drink" -> {
+            DRINK -> {
                 lemonadeState = RESTART
             }
 
-            "restart" -> {
+            RESTART -> {
                 lemonadeState = SELECT
             }
         }
